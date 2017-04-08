@@ -4,10 +4,11 @@
  모든 응용 프로그램은 시간에 따라 진화합니다. 성공적인 응용 프로그램은 사람들에게 유용하게 되어 진화합니다. 실패한 응용 프로그램은 진화하지 않고 결국은 퇴출됩니다.
 란 컨셉하에, 많은 기능을 가진 단일 서비스보다 여러가지 기능을 나누어 가지고 진화가 쉬운 마이크로 서비스란 개념이 생기기 시작하였습니다.
 Java 진영에서 Akka를 우연히 알게되었으며 , 마이크로 서비스에서 요구하는 애매모호한 이상적인 컨셉을 
-Akka.net을 이용해 Code단위로 Any Test MicroService 를 구현하면서, MicroService에 근접시도하기위핸 프로젝트입니다.
+Akka.net을 이용해 Code단위로 Any Test MicroService 를 구현하면서, MicroService의 이상적인 개념을 구현하면서 테스트 예정입니다.
 
 
-(https://docs.microsoft.com/ko-kr/azure/service-fabric/media/service-fabric-overview-microservices/monolithic-vs-micro.png)
+
+![그림](https://docs.microsoft.com/ko-kr/azure/service-fabric/media/service-fabric-overview-microservices/monolithic-vs-micro.png)
 
 
 ## 모놀리스(덩어리) 아키텍처
@@ -23,7 +24,7 @@ Akka.net을 이용해 Code단위로 Any Test MicroService 를 구현하면서, MicroService에
 
 특징
 * 동일한 서비스에서 포함하는 모듈(Dll)을 호출하기때문에 디버깅및 호출이 빠르다
-* 
+* 통합된 로컬개발환경 구축이 가능하나, 작은 기능개선을 위해 모두 구축해야 되는 경우가 있다.
 
 
 문제점
@@ -35,6 +36,7 @@ Akka.net을 이용해 Code단위로 Any Test MicroService 를 구현하면서, MicroService에
 ## 마이크로 서비스 아키텍쳐
 
 특징
+* 개발을 위해 모든 개발환경을 셋팅할 필요가 없다.
 * 작은 서비스(service)들의 집합으로써 애플리케이션(monolithic application)을 개발하는 방법이다.
 * 서비스들이 각각 프로세스이고 가벼운 통신 메커니즘을 사용한다.
 * 자동화된 방법으로 독립적으로 배포될 수 있다. 
@@ -46,7 +48,7 @@ Akka.net을 이용해 Code단위로 Any Test MicroService 를 구현하면서, MicroService에
 
 * 확장을 위해 코드와 상태를 파티션(또는 분할) 방법을 이해하는 것은 어렵습니다.
 * 전체 도메인에서 가장 작은 기능 단위로 서비스를 정의하는것도 어려움
-* 파편화된 작은 단위로 만든 서비스의 수명/유지 문제 역시 어려운점
+* 파편화된 작은 단위로 만든 서비스의 수명/유지/관리 문제 역시 어려움
 * 마이크로 서비스로의 전환은 단점이 아니라, 어렵다는데 있습니다. 
 
 
